@@ -62,17 +62,17 @@ class Library {
     }
   }
 
-  Library.prototype.addBook = function (book) {
+ function addBook(book) {
     if (book.state > 30) {
       this.books.push(book);
     }
   }
 
-  Library.prototype.findBookBy = function (type, value) {
+  function findBookBy(type, value) {
     return this.books.find(book => book[type] == value) || null;
   }
 
-  Library.prototype.giveBookByName = function (bookName) {
+  function giveBookByName(bookName) {
     if (this.bookName === undefined) {
       this.books.splice(this.books.indexOf(bookName), 1);
     }
