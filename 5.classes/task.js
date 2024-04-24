@@ -54,3 +54,27 @@ class DetectiveBook extends Book {
         this.type = "detective";
     }
 }
+
+class Library {
+    constructor (name){
+      this.name = name;
+      this.books = [];
+    }
+  }
+
+  Library.prototype.addBook = function (book) {
+    if (book.state > 30) {
+      this.books.push(book);
+    }
+  }
+
+  Library.prototype.findBookBy = function (type, value) {
+    return this.books.find(book => book[type] == value) || null;
+  }
+
+  Library.prototype.giveBookByName = function (bookName) {
+    if (this.bookName === undefined) {
+      this.books.splice(this.books.indexOf(bookName), 1);
+    }
+    return bookName;
+  }
